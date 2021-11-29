@@ -24,9 +24,11 @@ class Pokemon:
   def damageOut(self, moveindex, target):
     stat = self.moves[moveindex].power
     target.dmg = (self.baseAtk * stat/100)
+    return target.dmg
 
   def damageIn(self):
     self.hp = int(self.hp - (self.dmg - self.baseDef/10))
+    return (self.dmg - self.baseDef/10)
 
 
 class Move:
